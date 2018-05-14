@@ -9,6 +9,6 @@ To Do:
 - Prototype of actual gameplay (Everyone)
 - Save and load highscore data (Alex)
 - Hook up all sliders with value labels (George)
-- Images or help screen (Gary)
+- Images for help screen (Gary)
 - Create presentation (Everyone)
 - Record finished/final prototype (Everyone)
