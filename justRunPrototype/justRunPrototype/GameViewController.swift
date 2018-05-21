@@ -17,10 +17,14 @@ class GameViewController: UIViewController {
     var playerName: String = "Test"
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        label.text = playerName
     }
     
     override func didReceiveMemoryWarning() {

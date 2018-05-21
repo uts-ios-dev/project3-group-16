@@ -12,6 +12,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    var delegate: SettingsProtocol?
     var levelSpeed: Float = 5.0
     var playerColour: UIColor = UIColor.cyan
     var playerName: String = "Test"
@@ -79,6 +80,12 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func themeChanged(_ sender: Any) {
         levelTheme = levelThemeSegment.selectedSegmentIndex
+    }
+    @IBAction func updateSettings(_ sender: Any) {
+        delegate?.setDifficulty(valueSent: levelDifficulty)
+        delegate?.setLevelSpeed(valueSent: levelSpeed)
+        delegate?.setLevelTheme(valueSent: levelTheme)
+        delegate?.setPlayerColour(valueSent: playerColour)
     }
     
 }

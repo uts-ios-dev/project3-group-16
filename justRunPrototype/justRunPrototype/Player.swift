@@ -12,7 +12,7 @@ class Player: Codable{
     
     var name: String
     var score: Double
-    //var color: UIColor
+    
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archivedURL = DocumentsDirectory.appendingPathComponent("players")
     

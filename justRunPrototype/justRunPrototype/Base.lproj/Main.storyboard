@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Options"/>
                                 <connections>
-                                    <segue destination="iUf-tq-oBf" kind="show" identifier="settingsSegue" id="Odj-yM-LVB"/>
+                                    <action selector="toSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfW-Vf-4uZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-eM-SEJ">
@@ -105,15 +105,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VOv-Gi-b92"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="QyW-PO-4W9" id="vs6-6R-9RN"/>
+                        <outlet property="settingsButton" destination="jts-P0-77d" id="ZZ6-EC-dFn"/>
+                        <segue destination="iUf-tq-oBf" kind="show" identifier="settingsSegue" id="IkK-bH-AwX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
-        <!--Options-->
+        <!--SettingsViewController-->
         <scene sceneID="9TD-jd-Yti">
             <objects>
-                <viewController id="iUf-tq-oBf" customClass="SettingsViewController" customModule="justRunPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" title="SettingsViewController" id="iUf-tq-oBf" customClass="SettingsViewController" customModule="justRunPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dR0-nt-lRP">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +263,7 @@
                     <navigationItem key="navigationItem" title="Options" id="RzY-Wm-TEo">
                         <barButtonItem key="rightBarButtonItem" title="Apply" id="uMm-ev-oRj">
                             <connections>
+                                <action selector="updateSettings:" destination="iUf-tq-oBf" id="rvt-1V-t9S"/>
                                 <segue destination="ujo-xf-aXs" kind="unwind" unwindAction="unwindToMenuWithUnwindSegue:" id="Vmr-gz-EzZ"/>
                             </connections>
                         </barButtonItem>
@@ -348,6 +354,13 @@
                                     <segue destination="ZOb-9m-bHO" kind="show" identifier="highscoreSegue" id="Id9-Bg-Ort"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e6-3N-bYP">
+                                <rect key="frame" x="167" y="113" width="332" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="g0m-x4-c6F"/>
@@ -355,10 +368,13 @@
                     <navigationItem key="navigationItem" title="Game" id="79J-rC-Piy">
                         <barButtonItem key="backBarButtonItem" title="Retry" id="1bG-f8-HO4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="label" destination="0e6-3N-bYP" id="GmM-vH-id4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-xh-2md" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1043.9280359820091" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sxi-eO-M14">
@@ -374,7 +390,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfG-Pc-eAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="118"/>
+            <point key="canvasLocation" x="-573" y="116"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
