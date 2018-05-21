@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
-class Obstacle: Codable{
+class Obstacle{
     var image: UIImage
     init(image: UIImage){
-        self.image = imageUIImage
+        self.image = image
     }
 }

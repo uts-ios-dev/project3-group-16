@@ -12,12 +12,11 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var levelSpeed: Double = 2.0
+    var levelSpeed: Float = 2.0
     var playerColour: UIColor = UIColor.cyan
     var playerName: String = "Test"
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
-    var playerPosition: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,9 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToMenu(unwindSegue: UIStoryboardSegue){
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "highscoreSegue"{
+            
+        }
     }
 }

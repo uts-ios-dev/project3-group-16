@@ -11,12 +11,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var levelSpeed: Double = 2.0
+    var levelSpeed: Float = 2.0
     var playerColour: UIColor = UIColor.cyan
     var playerName: String = "Test"
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
-    var playerPosition: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()

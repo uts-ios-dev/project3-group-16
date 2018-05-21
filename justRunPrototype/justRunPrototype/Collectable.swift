@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Collectable: Codable{
+class Collectable{
     var score: Double
     // var image: UIImage
     init(score: Double){
