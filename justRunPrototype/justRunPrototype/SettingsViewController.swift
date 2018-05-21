@@ -1,16 +1,17 @@
 //
-//  ViewController.swift
+//  SettingsViewController.swift
 //  justRunPrototype
 //
-//  Created by Alexander Leydon on 14/5/18.
+//  Created by Alexander Leydon on 21/5/18.
 //  Copyright © 2018 Alexander Leydon. All rights reserved.
 //
-// Need to change levelTheme, levelDifficulty and playerPosition
-// from Int to a more appropriate type. And add an init
+//  Update values when something changes
+
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class SettingsViewController: UIViewController {
+    
     var levelSpeed: Double = 2.0
     var playerColour: UIColor = UIColor.cyan
     var playerName: String = "Test"
@@ -22,14 +23,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func unwindToMenu(unwindSegue: UIStoryboardSegue){
         
     }
 }
-
