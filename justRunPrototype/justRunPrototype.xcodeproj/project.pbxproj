@@ -14,8 +14,8 @@
 		F02C286620A903AA00CC94A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02C286420A903AA00CC94A8 /* LaunchScreen.storyboard */; };
 		F02C287120A903AA00CC94A8 /* justRunPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C287020A903AA00CC94A8 /* justRunPrototypeTests.swift */; };
 		F02C287C20A903AA00CC94A8 /* justRunPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C287B20A903AA00CC94A8 /* justRunPrototypeUITests.swift */; };
-		F045CDCC20B274BF003A55AF /* Highscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = F045CDCB20B274BF003A55AF /* Highscores.txt */; };
 		F045CDCE20B28B2B003A55AF /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CDCD20B28B2B003A55AF /* SettingsProtocol.swift */; };
+		F069E79620BB723C00624F0C /* Highscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = F069E79520BB723C00624F0C /* Highscores.txt */; };
 		F0F24BE820B2380400E05E1B /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BE720B2380400E05E1B /* HighscoreViewController.swift */; };
 		F0F24BEA20B2388100E05E1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BE920B2388100E05E1B /* Player.swift */; };
 		F0F24BEE20B23F3F00E05E1B /* Collectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BED20B23F3F00E05E1B /* Collectable.swift */; };
@@ -55,8 +55,8 @@
 		F02C287720A903AA00CC94A8 /* justRunPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = justRunPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02C287B20A903AA00CC94A8 /* justRunPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = justRunPrototypeUITests.swift; sourceTree = "<group>"; };
 		F02C287D20A903AA00CC94A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F045CDCB20B274BF003A55AF /* Highscores.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Highscores.txt; sourceTree = "<group>"; };
 		F045CDCD20B28B2B003A55AF /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
+		F069E79520BB723C00624F0C /* Highscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Highscores.txt; sourceTree = "<group>"; };
 		F0F24BE720B2380400E05E1B /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
 		F0F24BE920B2388100E05E1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F0F24BED20B23F3F00E05E1B /* Collectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collectable.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				F02C286220A903AA00CC94A8 /* Assets.xcassets */,
 				F02C286420A903AA00CC94A8 /* LaunchScreen.storyboard */,
 				F02C286720A903AA00CC94A8 /* Info.plist */,
-				F045CDCB20B274BF003A55AF /* Highscores.txt */,
 				F045CDCD20B28B2B003A55AF /* SettingsProtocol.swift */,
+				F069E79520BB723C00624F0C /* Highscores.txt */,
 			);
 			path = justRunPrototype;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 				F02C286620A903AA00CC94A8 /* LaunchScreen.storyboard in Resources */,
 				F02C286320A903AA00CC94A8 /* Assets.xcassets in Resources */,
 				F02C286120A903AA00CC94A8 /* Main.storyboard in Resources */,
-				F045CDCC20B274BF003A55AF /* Highscores.txt in Resources */,
+				F069E79620BB723C00624F0C /* Highscores.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

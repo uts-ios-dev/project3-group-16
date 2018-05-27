@@ -9,7 +9,7 @@
 // from Int to a more appropriate type. And add an init
 import UIKit
 
-class ViewController: UIViewController, SettingsProtocol {
+class ViewController: UIViewController, SettingsProtocol,  UITextFieldDelegate {
 
     var settingsVC: SettingsViewController?
     var levelSpeed: Float = 2.0
@@ -23,11 +23,23 @@ class ViewController: UIViewController, SettingsProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        updateValues()
+        self.nameTextField.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateValues()
+    }
+    
+    func updateValues(){
         nameTextField.backgroundColor = playerColour
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nameTextField.endEditing(true)
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,6 +68,10 @@ class ViewController: UIViewController, SettingsProtocol {
         if segue.identifier == "gameSegue"{
             let vc = segue.destination as! GameViewController
             vc.playerName = nameTextField.text!
+            vc.levelDifficulty = levelDifficulty
+            vc.levelTheme = levelTheme
+            vc.levelSpeed = levelSpeed
+            vc.playerColour = playerColour
         } else if segue.identifier == "settingsSegue"{
             let vc = segue.destination as! SettingsViewController
             vc.delegate = self

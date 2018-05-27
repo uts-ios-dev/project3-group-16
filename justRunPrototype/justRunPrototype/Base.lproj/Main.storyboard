@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="117.39130434782609" y="117.59999999999999"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="9TD-jd-Yti">
@@ -256,18 +256,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iq-Ea-S3D">
+                                <rect key="frame" x="484" y="325" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Apply"/>
+                                <connections>
+                                    <action selector="updateSettings:" destination="iUf-tq-oBf" eventType="touchUpInside" id="zKk-2Q-l0L"/>
+                                    <segue destination="ujo-xf-aXs" kind="unwind" unwindAction="unwindToMenuWithUnwindSegue:" id="ZhW-tK-zRP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DJ9-wv-cNK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Options" id="RzY-Wm-TEo">
-                        <barButtonItem key="rightBarButtonItem" title="Apply" id="uMm-ev-oRj">
-                            <connections>
-                                <action selector="updateSettings:" destination="iUf-tq-oBf" id="rvt-1V-t9S"/>
-                                <segue destination="ujo-xf-aXs" kind="unwind" unwindAction="unwindToMenuWithUnwindSegue:" id="Vmr-gz-EzZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Options" id="RzY-Wm-TEo"/>
                     <connections>
                         <outlet property="difficultySegment" destination="qyd-QM-ber" id="UpX-iW-OXC"/>
                         <outlet property="levelSpeedLabel" destination="kKZ-ha-acl" id="sRI-cU-Xpm"/>
@@ -335,7 +337,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isU-s8-dba" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zFw-lq-xgO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="859.52023988005999"/>
+            <point key="canvasLocation" x="1029" y="1121"/>
         </scene>
         <!--Game-->
         <scene sceneID="hbU-dU-SDS">
@@ -394,6 +396,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2W4-0n-o5V"/>
+        <segue reference="Id9-Bg-Ort"/>
     </inferredMetricsTieBreakers>
 </document>

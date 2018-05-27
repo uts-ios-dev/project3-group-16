@@ -15,9 +15,9 @@ class SettingsViewController: UIViewController {
     var delegate: SettingsProtocol?
     var levelSpeed: Float = 5.0
     var playerColour: UIColor = UIColor.cyan
-    var playerName: String = "Test"
-    var levelTheme: Int = 1
-    var levelDifficulty: Int = 1
+    var playerName: String = "OldTest"
+    var levelTheme: Int = 0
+    var levelDifficulty: Int = 0
     var red: CGFloat = CGFloat(0.5)
     var green: CGFloat = CGFloat(0.5)
     var blue: CGFloat = CGFloat(0.5)
