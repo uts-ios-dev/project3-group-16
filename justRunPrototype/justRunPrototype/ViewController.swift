@@ -9,11 +9,11 @@
 // from Int to a more appropriate type. And add an init
 import UIKit
 
-class ViewController: UIViewController, SettingsProtocol,  UITextFieldDelegate {
+class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
 
     var settingsVC: SettingsViewController?
-    var levelSpeed: Float = 2.0
-    var playerColour: UIColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+    var levelSpeed: Float = 0.01
+    var playerChara: Int = 0
     var playerName: String = "Test"
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
@@ -23,30 +23,18 @@ class ViewController: UIViewController, SettingsProtocol,  UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        updateValues()
-        self.nameTextField.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateValues()
-    }
-    
-    func updateValues(){
-        nameTextField.backgroundColor = playerColour
+        nameTextField.backgroundColor = UIColor.cyan
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.nameTextField.endEditing(true)
-        return true
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    func setPlayerColour(valueSent: UIColor) {
-        self.playerColour = valueSent
+    func setPlayerChara(valueSent: Int) {
+        self.playerChara = valueSent
     }
     func setLevelTheme(valueSent: Int) {
         self.levelTheme = valueSent
@@ -56,6 +44,11 @@ class ViewController: UIViewController, SettingsProtocol,  UITextFieldDelegate {
     }
     func setLevelSpeed(valueSent: Float) {
         self.levelSpeed = valueSent
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nameTextField.endEditing(true)
+        return true
     }
     
     @IBAction func toSettings(_ sender: Any) {
@@ -68,10 +61,6 @@ class ViewController: UIViewController, SettingsProtocol,  UITextFieldDelegate {
         if segue.identifier == "gameSegue"{
             let vc = segue.destination as! GameViewController
             vc.playerName = nameTextField.text!
-            vc.levelDifficulty = levelDifficulty
-            vc.levelTheme = levelTheme
-            vc.levelSpeed = levelSpeed
-            vc.playerColour = playerColour
         } else if segue.identifier == "settingsSegue"{
             let vc = segue.destination as! SettingsViewController
             vc.delegate = self

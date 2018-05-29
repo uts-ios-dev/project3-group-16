@@ -9,22 +9,101 @@
 
 import Foundation
 import UIKit
+import SpriteKit
 
-class GameViewController: UIViewController {
+extension SKNode {
+    class func unarchiveFromFile(_ file : String) -> SKNode? {
+        
+        let path = Bundle.main.path(forResource: file, ofType: "sks")
+        
+        let sceneData: Data?
+        do {
+            sceneData = try Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
+        } catch _ {
+            sceneData = nil
+        }
+        let archiver = NSKeyedUnarchiver(forReadingWith: sceneData!)
+        
+        archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
+        let scene = archiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! GameScene
+        archiver.finishDecoding()
+        return scene
+    }
+}
+
+class GameViewController: UIViewController, GameProtocol {
     
-    var levelSpeed: Float = 2.0
-    var playerColour: UIColor = UIColor.cyan
+    @IBOutlet weak var GameView: SKView!
+    var gameScene: GameScene?
+    var screenSize = UIScreen.main.bounds
+    var levelSpeed: Float = 0.01
+    var playerChara: Int = 0
     var playerName: String = "Test"
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
-    @IBOutlet weak var label: UILabel!
+    var playerScore: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        if let view = GameView as! SKView? {
+//            view.bounds.size.width = screenSize.width
+//            view.bounds.size.height = screenSize.height
+//            let scene = GameScene(size: view.bounds.size) //establish GameView via code
+//            scene.scaleMode = .aspectFill
+//            view.presentScene(scene)
+//            view.ignoresSiblingOrder = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//        }
+        
+        
+        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+            gameScene = scene
+            gameScene?.gameDelegate = self
+            // Configure the view.
+            let skView = GameView!
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            
+            /* Sprite Kit applies additional optimizations to improve rendering performance */
+            skView.ignoresSiblingOrder = true
+            
+            /* Set the scale mode to scale to fit the window */
+            scene.scaleMode = .aspectFill
+            
+            skView.presentScene(scene)
+        }
     }
+    
+    override var shouldAutorotate : Bool {
+        return true
+    }
+    
+    func setPlayerScore(valueSent: Int) {
+        self.playerScore = valueSent
+    }
+    func toHighscores() {
+        let highscore = self.storyboard?.instantiateViewController(withIdentifier: "HighscoreViewController") as? HighscoreViewController
+        let player = Player(name: playerName, score: playerScore)
+        highscore?.loadData()
+        highscore?.saveData(player: player)
+        self.navigationController?.pushViewController(highscore!, animated: true)
+    }
+    
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return UIInterfaceOrientationMask.allButUpsideDown
+        } else {
+            return UIInterfaceOrientationMask.all
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        label.text = playerName
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +113,7 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "highscoreSegue"{
-            
+            _ = segue.destination as! HighscoreViewController
         }
     }
 }

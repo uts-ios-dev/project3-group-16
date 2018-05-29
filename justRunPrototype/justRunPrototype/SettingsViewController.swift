@@ -13,23 +13,18 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     var delegate: SettingsProtocol?
-    var levelSpeed: Float = 5.0
-    var playerColour: UIColor = UIColor.cyan
-    var playerName: String = "OldTest"
-    var levelTheme: Int = 0
-    var levelDifficulty: Int = 0
-    var red: CGFloat = CGFloat(0.5)
-    var green: CGFloat = CGFloat(0.5)
-    var blue: CGFloat = CGFloat(0.5)
-    var alpha: CGFloat = CGFloat(0.5)
+    var levelSpeed: Float = 0.01
+    var playerChara: Int = 0
+    var playerName: String = "Test"
+    var levelTheme: Int = 1
+    var levelDifficulty: Int = 1
 
     @IBOutlet weak var levelSpeedSlider: UISlider!
     @IBOutlet weak var levelSpeedLabel: UILabel!
-    @IBOutlet weak var playerColourRedSlider: UISlider!
-    @IBOutlet weak var playerColourGreenSlider: UISlider!
-    @IBOutlet weak var playerColourBlueSlider: UISlider!
-    @IBOutlet weak var playerColourAlphaSlider: UISlider!
-    @IBOutlet weak var playerColourImage: UIImageView!
+    
+    @IBOutlet weak var charaSegment: UISegmentedControl!
+    @IBOutlet weak var charaImage: UIImageView!
+    
     @IBOutlet weak var difficultySegment: UISegmentedControl!
     @IBOutlet weak var levelThemeSegment: UISegmentedControl!
     
@@ -38,38 +33,17 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         levelSpeed = levelSpeedSlider.value
         levelSpeedLabel.text = String(levelSpeed)
-        red = CGFloat(playerColourRedSlider.value)
-        green = CGFloat(playerColourGreenSlider.value)
-        blue = CGFloat(playerColourBlueSlider.value)
-        alpha = CGFloat(playerColourAlphaSlider.value)
-        colourPlayer()
     }
     
-    func colourPlayer(){
-        playerColour = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-        playerColourImage.backgroundColor = playerColour
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func redChanged(_ sender: Any) {
-        red = CGFloat(playerColourRedSlider.value)
-        colourPlayer()
-    }
-    @IBAction func greenChanged(_ sender: Any) {
-        green = CGFloat(playerColourGreenSlider.value)
-        colourPlayer()
-    }
-    @IBAction func blueChanged(_ sender: Any) {
-        blue = CGFloat(playerColourBlueSlider.value)
-        colourPlayer()
-    }
-    @IBAction func alphaChnaged(_ sender: Any) {
-        alpha = CGFloat(playerColourAlphaSlider.value)
-        colourPlayer()
+    
+    @IBAction func charaChanged(_ sender: Any) {
+        playerChara = charaSegment.selectedSegmentIndex
     }
     @IBAction func speedChanged(_ sender: Any) {
         levelSpeed = levelSpeedSlider.value
@@ -85,7 +59,7 @@ class SettingsViewController: UIViewController {
         delegate?.setDifficulty(valueSent: levelDifficulty)
         delegate?.setLevelSpeed(valueSent: levelSpeed)
         delegate?.setLevelTheme(valueSent: levelTheme)
-        delegate?.setPlayerColour(valueSent: playerColour)
+        delegate?.setPlayerChara(valueSent: playerChara)
     }
     
 }

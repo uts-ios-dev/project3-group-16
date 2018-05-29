@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 protocol SettingsProtocol {
-    func setPlayerColour(valueSent: UIColor)
+    func setPlayerChara(valueSent: Int)
     func setLevelSpeed(valueSent: Float)
     func setDifficulty(valueSent: Int)
     func setLevelTheme(valueSent: Int)
