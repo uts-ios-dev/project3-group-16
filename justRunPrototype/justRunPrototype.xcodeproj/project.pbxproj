@@ -10,7 +10,6 @@
 		568EE2BA20BB818C00ABB9D1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EE2B920BB818C00ABB9D1 /* GameScene.swift */; };
 		568EE2BC20BBAE6200ABB9D1 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 568EE2BB20BBAE6200ABB9D1 /* bird.atlas */; };
 		568EE2BE20BBAE8F00ABB9D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568EE2BD20BBAE8F00ABB9D1 /* Images.xcassets */; };
-		568EE2C020BBAF3F00ABB9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568EE2BF20BBAF3F00ABB9D1 /* Info.plist */; };
 		568EE2C220BBB26100ABB9D1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 568EE2C120BBB26100ABB9D1 /* GameScene.sks */; };
 		F02C285C20A903AA00CC94A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C285B20A903AA00CC94A8 /* AppDelegate.swift */; };
 		F02C285E20A903AA00CC94A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C285D20A903AA00CC94A8 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 		F02C287C20A903AA00CC94A8 /* justRunPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C287B20A903AA00CC94A8 /* justRunPrototypeUITests.swift */; };
 		F045CDCE20B28B2B003A55AF /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CDCD20B28B2B003A55AF /* SettingsProtocol.swift */; };
 		F07CAFA020BD009D00CE63A0 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CAF9F20BD009D00CE63A0 /* GameProtocol.swift */; };
-		F07CAFA220BD029500CE63A0 /* Highscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = F07CAFA120BD029400CE63A0 /* Highscores.txt */; };
 		F0F24BE820B2380400E05E1B /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BE720B2380400E05E1B /* HighscoreViewController.swift */; };
 		F0F24BEA20B2388100E05E1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BE920B2388100E05E1B /* Player.swift */; };
 		F0F24BF020B242A300E05E1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F24BEF20B242A300E05E1B /* GameViewController.swift */; };
@@ -63,7 +61,6 @@
 		F02C287D20A903AA00CC94A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F045CDCD20B28B2B003A55AF /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		F07CAF9F20BD009D00CE63A0 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
-		F07CAFA120BD029400CE63A0 /* Highscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Highscores.txt; sourceTree = "<group>"; };
 		F0F24BE720B2380400E05E1B /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
 		F0F24BE920B2388100E05E1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F0F24BEF20B242A300E05E1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +130,6 @@
 				F0F24BE920B2388100E05E1B /* Player.swift */,
 				F02C285F20A903AA00CC94A8 /* Main.storyboard */,
 				F02C286420A903AA00CC94A8 /* LaunchScreen.storyboard */,
-				F07CAFA120BD029400CE63A0 /* Highscores.txt */,
 			);
 			path = justRunPrototype;
 			sourceTree = "<group>";
@@ -219,7 +215,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Alexander Leydon";
 				TargetAttributes = {
 					F02C285720A903AA00CC94A8 = {
@@ -266,9 +262,7 @@
 				F02C286620A903AA00CC94A8 /* LaunchScreen.storyboard in Resources */,
 				568EE2BE20BBAE8F00ABB9D1 /* Images.xcassets in Resources */,
 				568EE2BC20BBAE6200ABB9D1 /* bird.atlas in Resources */,
-				568EE2C020BBAF3F00ABB9D1 /* Info.plist in Resources */,
 				568EE2C220BBB26100ABB9D1 /* GameScene.sks in Resources */,
-				F07CAFA220BD029500CE63A0 /* Highscores.txt in Resources */,
 				F02C286120A903AA00CC94A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +365,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -378,6 +373,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -428,6 +424,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -435,6 +432,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
