@@ -111,10 +111,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             imageName =  "dragonfly1"
             break;
         case 1:
-            imageName = "devil"
+            imageName = "bluebird1"
             break;
         case 2:
-            imageName = "plane"
+            imageName = "plane1"
             break;
         default: break;
         }
