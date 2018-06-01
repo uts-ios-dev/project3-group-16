@@ -23,7 +23,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     var score = NSInteger()
     
     var levelSpeed: Float = 0.01
-    var playerChara: Int = 0
+    var playerChara: Int = 1
     var levelTheme: Int = 1
     var levelDifficulty: Int = 1
     var gameDelegate: GameProtocol?
@@ -105,9 +105,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         self.run(spawnThenDelayForever)
         
         // setup our bird
-        let birdTexture1 = SKTexture(imageNamed: "dragonfly1")
+        var imageName: String = ""
+        switch playerChara{
+        case 0:
+            imageName =  "dragonfly1"
+            break;
+        case 1:
+            imageName = "devil"
+            break;
+        case 2:
+            imageName = "plane"
+            break;
+        default: break;
+        }
+        let birdTexture1 = SKTexture(imageNamed: imageName)
         birdTexture1.filteringMode = .nearest
-        let birdTexture2 = SKTexture(imageNamed: "dragonfly2")
+        let birdTexture2 = SKTexture(imageNamed: imageName)
         birdTexture2.filteringMode = .nearest
         
         let anim = SKAction.animate(with: [birdTexture1, birdTexture2], timePerFrame: 0.2)
@@ -213,8 +226,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if moving.speed > 0  {
             for _ in touches { // do we need all touches?
-                bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 30))
+                if (bird.position.y < 667){
+                    bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                    bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 30))
+                }
             }
         } else if canRestart {
             self.resetScene()

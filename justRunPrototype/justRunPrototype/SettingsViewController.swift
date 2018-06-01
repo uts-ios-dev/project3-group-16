@@ -16,8 +16,8 @@ class SettingsViewController: UIViewController {
     var levelSpeed: Float = 0.01
     var playerChara: Int = 0
     var playerName: String = "Test"
-    var levelTheme: Int = 1
-    var levelDifficulty: Int = 1
+    var levelTheme: Int = 0
+    var levelDifficulty: Int = 0
 
     @IBOutlet weak var levelSpeedSlider: UISlider!
     @IBOutlet weak var levelSpeedLabel: UILabel!
@@ -33,8 +33,23 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         levelSpeed = levelSpeedSlider.value
         levelSpeedLabel.text = String(levelSpeed)
+        showCharacter()
     }
     
+    func showCharacter(){
+        switch playerChara{
+        case 0:
+            charaImage.image = UIImage(named: "dragonfly1.png")
+            break;
+        case 1:
+            charaImage.image = UIImage(named: "devil.png")
+            break;
+        case 2:
+            charaImage.image = UIImage(named: "plane.png")
+            break;
+        default: break;
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,6 +59,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func charaChanged(_ sender: Any) {
         playerChara = charaSegment.selectedSegmentIndex
+        showCharacter()
     }
     @IBAction func speedChanged(_ sender: Any) {
         levelSpeed = levelSpeedSlider.value

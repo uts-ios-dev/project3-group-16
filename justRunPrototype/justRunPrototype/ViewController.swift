@@ -61,6 +61,10 @@ class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
         if segue.identifier == "gameSegue"{
             let vc = segue.destination as! GameViewController
             vc.playerName = nameTextField.text!
+            vc.levelDifficulty = levelDifficulty
+            vc.playerChara = playerChara
+            vc.levelSpeed = levelSpeed
+            vc.levelTheme = levelTheme
         } else if segue.identifier == "settingsSegue"{
             let vc = segue.destination as! SettingsViewController
             vc.delegate = self

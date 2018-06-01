@@ -61,6 +61,10 @@ class GameViewController: UIViewController, GameProtocol {
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             gameScene = scene
             gameScene?.gameDelegate = self
+            gameScene?.playerChara = playerChara
+            gameScene?.levelTheme = levelTheme
+            gameScene?.levelSpeed = levelSpeed
+            gameScene?.levelDifficulty = levelDifficulty
             // Configure the view.
             let skView = GameView!
             skView.showsFPS = true
@@ -101,6 +105,10 @@ class GameViewController: UIViewController, GameProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        print(levelSpeed)
+        print(levelTheme)
+        print(levelDifficulty)
+        print(playerChara)
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
