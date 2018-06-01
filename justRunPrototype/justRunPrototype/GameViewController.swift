@@ -105,10 +105,6 @@ class GameViewController: UIViewController, GameProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        print(levelSpeed)
-        print(levelTheme)
-        print(levelDifficulty)
-        print(playerChara)
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)

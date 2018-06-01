@@ -42,10 +42,10 @@ class SettingsViewController: UIViewController {
             charaImage.image = UIImage(named: "dragonfly1.png")
             break;
         case 1:
-            charaImage.image = UIImage(named: "devil.png")
+            charaImage.image = UIImage(named: "bluebird1.png")
             break;
         case 2:
-            charaImage.image = UIImage(named: "plane.png")
+            charaImage.image = UIImage(named: "plane1.png")
             break;
         default: break;
         }

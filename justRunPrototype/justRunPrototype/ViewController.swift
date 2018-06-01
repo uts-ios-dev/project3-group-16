@@ -26,6 +26,7 @@ class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.backgroundColor = UIColor.cyan
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

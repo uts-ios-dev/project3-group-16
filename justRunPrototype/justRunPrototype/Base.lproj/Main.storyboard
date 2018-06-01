@@ -63,12 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-tS-948">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="aYj-C3-jHq">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="Oi2-8b-7Rw"/>
-                                    <constraint firstAttribute="width" constant="667" id="Ve1-fp-9ml"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OC-KI-Yj7">
                                 <rect key="frame" x="182" y="144" width="109" height="21"/>
@@ -138,6 +134,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aYj-C3-jHq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BW4-uN-jjL"/>
+                            <constraint firstItem="aYj-C3-jHq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JZv-IJ-G1n"/>
+                            <constraint firstItem="aYj-C3-jHq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n5x-mf-1M6"/>
+                            <constraint firstItem="aYj-C3-jHq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tnt-gF-kAQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VOv-Gi-b92"/>

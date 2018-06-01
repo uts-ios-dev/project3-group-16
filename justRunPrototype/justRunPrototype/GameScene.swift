@@ -108,19 +108,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         var imageName: String = ""
         switch playerChara{
         case 0:
-            imageName =  "dragonfly1"
+            imageName =  "dragonfly"
             break;
         case 1:
-            imageName = "bluebird1"
+            imageName = "bluebird"
             break;
         case 2:
-            imageName = "plane1"
+            imageName = "plane"
             break;
         default: break;
         }
-        let birdTexture1 = SKTexture(imageNamed: imageName)
+        let birdTexture1 = SKTexture(imageNamed: (imageName+"1"))
         birdTexture1.filteringMode = .nearest
-        let birdTexture2 = SKTexture(imageNamed: imageName)
+        let birdTexture2 = SKTexture(imageNamed: imageName+"2")
         birdTexture2.filteringMode = .nearest
         
         let anim = SKAction.animate(with: [birdTexture1, birdTexture2], timePerFrame: 0.2)
@@ -267,6 +267,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                     self.backgroundColor = self.skyColor
                 }), SKAction.wait(forDuration: TimeInterval(0.05))]), count:4), SKAction.run({
                     self.gameOver()
+                    self.canRestart = true
                 })]), withKey: "flash")
             }
         }
