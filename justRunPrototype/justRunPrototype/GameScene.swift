@@ -68,7 +68,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         }
         
         // skyline
-        let skyTexture = SKTexture(imageNamed: "sky2")
+        let skyName: String = "sky" + String(levelTheme)
+        let skyTexture = SKTexture(imageNamed: skyName)
         skyTexture.filteringMode = .nearest
         
         let moveSkySprite = SKAction.moveBy(x: -skyTexture.size().width * 2.0, y: 0, duration: TimeInterval(0.1 * skyTexture.size().width * 2.0))

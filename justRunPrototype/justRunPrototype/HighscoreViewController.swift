@@ -42,6 +42,7 @@ class HighscoreViewController: UITableViewController{
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         loadData()
         players.sort(by: {$0.score > $1.score})
     }

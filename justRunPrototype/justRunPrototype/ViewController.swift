@@ -15,18 +15,24 @@ class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
     var levelSpeed: Float = 0.01
     var playerChara: Int = 0
     var playerName: String = "Test"
-    var levelTheme: Int = 1
+    var levelTheme: Int = 0
     var levelDifficulty: Int = 1
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var backImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.backgroundColor = UIColor.cyan
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        backImage.image = UIImage(named: ("sky"+String(levelTheme)))
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +58,19 @@ class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
         return true
     }
     
+    @IBAction func startGame(_ sender: Any) {
+        if nameTextField.text == ""{
+            UIView.animate(withDuration: 0.2, animations: {
+                self.nameTextField.backgroundColor = UIColor.red
+            }) { (_) in
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.nameTextField.backgroundColor = UIColor.cyan
+                })
+            }
+        } else {
+            performSegue(withIdentifier: "gameSegue", sender: nil)
+        }
+    }
     @IBAction func toSettings(_ sender: Any) {
         settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController
         settingsVC?.delegate = self
