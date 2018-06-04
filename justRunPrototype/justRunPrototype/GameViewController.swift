@@ -5,7 +5,6 @@
 //  Created by Alexander Leydon on 21/5/18.
 //  Copyright © 2018 Alexander Leydon. All rights reserved.
 //
-// Create player, level and an array of collectables and obstacles
 
 import Foundation
 import UIKit
@@ -45,17 +44,6 @@ class GameViewController: UIViewController, GameProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        if let view = GameView as! SKView? {
-//            view.bounds.size.width = screenSize.width
-//            view.bounds.size.height = screenSize.height
-//            let scene = GameScene(size: view.bounds.size) //establish GameView via code
-//            scene.scaleMode = .aspectFill
-//            view.presentScene(scene)
-//            view.ignoresSiblingOrder = true
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//        }
         
         
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {

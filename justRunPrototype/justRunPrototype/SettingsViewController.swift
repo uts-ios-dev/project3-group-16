@@ -5,7 +5,6 @@
 //  Created by Alexander Leydon on 21/5/18.
 //  Copyright © 2018 Alexander Leydon. All rights reserved.
 //
-//  Update values when something changes
 
 import Foundation
 import UIKit

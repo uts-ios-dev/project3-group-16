@@ -5,8 +5,7 @@
 //  Created by Alexander Leydon on 14/5/18.
 //  Copyright © 2018 Alexander Leydon. All rights reserved.
 //
-// Need to change levelTheme, levelDifficulty and playerPosition
-// from Int to a more appropriate type. And add an init
+
 import UIKit
 
 class ViewController: UIViewController, SettingsProtocol, UITextFieldDelegate {
