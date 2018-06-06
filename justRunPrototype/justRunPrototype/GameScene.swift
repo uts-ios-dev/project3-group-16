@@ -2,8 +2,8 @@
 //  GameScene.swift
 //  FlappyBird
 //
-//  Created by Nate Murray on 6/2/14.
-//  Copyright (c) 2014 Fullstack.io. All rights reserved.
+//  Created by George on 5/22/18.
+//  Copyright © 2018 George. All rights reserved.
 //
 
 import SpriteKit
