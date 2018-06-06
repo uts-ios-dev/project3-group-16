@@ -2,8 +2,8 @@
 //  GameScene.swift
 //  FlappyBird
 //
-//  Created by George on 5/22/18.
-//  Copyright © 2018 George. All rights reserved.
+//  Created by Alexander Leydon on 14/5/18.
+//  Copyright © 2018 Alexander Leydon. All rights reserved.
 //
 
 import SpriteKit
